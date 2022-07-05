@@ -1,15 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import "./animation.css";
 @layer components {
+
+  /* HTML elements */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  tr:nth-child(odd) {
+    background-color: #fff;
+  }
+  tr:hover {
+    background-color: #D6DCB75C;
+  }
+
+  /* tailwind Custum Classes */
+  .filterBarOpen {
+    animation-duration: 0.4s;
+    animation-name : filterBar;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+  }
+  .filterBarClose {
+    animation-duration: 0.4s;
+    animation-name : filterBar_;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease
+  }
+  .filterBackShow {
+    animation-duration: 0.4s;
+    animation-name : filterBack;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+
+  }
+  .filterBackHide {
+    animation-duration: 3s;
+    animation-name : filterBackClose;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease
+  } 
   .flexCenter{
     @apply flex justify-center items-center
   }
-  tr:nth-child(odd) {
-    background-color: #f1f8ff;
-  }
-  
-
 }
+
 

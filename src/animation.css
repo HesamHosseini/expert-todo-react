@@ -1,0 +1,16 @@
+@keyframes filterBar{
+    0% {left: 100vw;}
+    100% {left: 70vw;}
+}
+@keyframes filterBar_{
+    100% {left: 100vw;}
+    0% {left: 70vw;}
+}
+@keyframes filterBack{
+    0% {display : none;}
+    100% {display : block;}
+}
+@keyframes filterBackClose{
+    0% {display : block;}
+    100% {display : none;}
+}

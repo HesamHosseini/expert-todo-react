@@ -3,9 +3,13 @@ import { FaFilter } from "react-icons/fa";
 import { AiOutlinePlusSquare } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModalDisplay } from "../../Redux/TodoModalSlice";
+import { setSearchInput } from "../../Redux/SearchBarSlice";
+import { filterShowState } from "../../Redux/FilterShowSlice";
 
 const Header = () => {
   const modalStatus = useSelector((state) => state.toggleModal.value);
+  const SearchBarInput = useSelector((state) => state.SearchBar.value);
+
   const dispatch = useDispatch();
   return (
     <>
@@ -19,14 +23,18 @@ const Header = () => {
 
         <div className="RightSide flexCenter flex-row  gap-5">
           <input
+            value={SearchBarInput}
             placeholder="Search"
-            className="text-base p-2 rounded w-[16rem]"
+            className="text-base p-2 rounded w-[16rem] text-black"
+            onChange={(e) => {
+              dispatch(setSearchInput(e.target.value));
+            }}
           />
 
           <i
             className="cursor-pointer"
             onClick={() => {
-              console.log("fiter");
+              dispatch(filterShowState(1))
             }}
           >
             <FaFilter />

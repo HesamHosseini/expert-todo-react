@@ -8,8 +8,8 @@ export const TodoSlice = createSlice({
       {
         TodoDeadLine: "1401/04/08",
         TodoDescription: "This is a test todo description",
-        TodoPriority: "Todo",
-        TodoStatus: "low",
+        TodoStatus: "Todo",
+        TodoPriority: "Low",
         TodoTitle: "test Todo",
         id: 1656498869165,
       },
@@ -17,14 +17,21 @@ export const TodoSlice = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
+      
       state.todos.unshift(action.payload);
     },
     deleteTodo: (state, action) => {
       state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
     editTodo: (state, action) => {
-      const { id } = action.payload;
-      
+      state.todos = state.todos.map((todo) => {
+        if (todo.id === action.payload.id) {
+          console.log("Matched");
+          return action.payload;
+        } else {
+          return todo;
+        }
+      });
     },
   },
 });
