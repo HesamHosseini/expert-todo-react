@@ -17,7 +17,7 @@ function Filter() {
   const filterSelectorState = useSelector(
     (state) => state.FilterShowSlice.returnal
   );
-  console.log(filterSelectorState);
+
   const handleFilterAnimation = () => {
     if (filterBarState === 1) {
       return "filterBarOpen";

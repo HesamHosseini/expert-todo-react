@@ -8,6 +8,7 @@ import SearchBarSliceReducer from "./SearchBarSlice";
 import FilterShowSliceReducer from "./FilterShowSlice"
 export const store = configureStore({
   reducer: {
+    
     Todos: TodoReducer,
     toggleModal: ModalReducer,
     modalInput: modalInputReducer,
